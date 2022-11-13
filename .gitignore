@@ -1,0 +1,5 @@
+.venv
+weights/
+*.egg-info/
+__pycache__
+**/model.ckpt
