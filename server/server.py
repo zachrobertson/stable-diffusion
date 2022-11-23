@@ -4,6 +4,7 @@ from model import txt2img
 from flask import Flask, request
 
 app = Flask(__name__)
+model = load_model_from_config(config, "model.ckpt")
 
 @app.route("/healthCheck", methods=["GET"])
 def healthcheck():

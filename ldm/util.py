@@ -76,17 +76,25 @@ def count_params(model, verbose=False):
 
 
 def instantiate_from_config(config):
+    print("Instantiate from config")
+    print(f"Config: {config}")
     if not "target" in config:
         if config == '__is_first_stage__':
             return None
         elif config == "__is_unconditional__":
             return None
         raise KeyError("Expected key `target` to instantiate.")
-    return get_obj_from_str(config["target"])(**config.get("params", dict()))
+    obj = get_obj_from_str(config["target"])
+    print(obj)
+    print(f"Params Dict: {config.get('params', dict())}")
+    return obj(**config.get("params", dict()))
 
 
 def get_obj_from_str(string, reload=False):
     module, cls = string.rsplit(".", 1)
+    print("Get obj from string")
+    print(f"Module: {module}")
+    print(f"Cls: {cls}")
     if reload:
         module_imp = importlib.import_module(module)
         importlib.reload(module_imp)

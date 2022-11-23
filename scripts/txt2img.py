@@ -207,7 +207,6 @@ def main():
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
     model = model.to(device)
-    model.half()
 
     if opt.plms:
         sampler = PLMSSampler(model)
