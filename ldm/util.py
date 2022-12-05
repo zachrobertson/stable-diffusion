@@ -76,12 +76,18 @@ def count_params(model, verbose=False):
 
 
 def instantiate_from_config(config):
-    print("Instantiate from config")
+    print()
+    print("----------------------------")
+    print("INSTANTIATE FROM CONFIG")
+    print("----------------------------")
+    print()
     print(f"Config: {config}")
     if not "target" in config:
         if config == '__is_first_stage__':
+            print("is first stage")
             return None
         elif config == "__is_unconditional__":
+            print("is unconditional")
             return None
         raise KeyError("Expected key `target` to instantiate.")
     obj = get_obj_from_str(config["target"])
