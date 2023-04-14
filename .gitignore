@@ -1,0 +1,14 @@
+# VSCode
+.vscode/
+
+# Virtual Environments
+.venv*/
+
+# Egg info
+*.egg-info/
+
+# pycache
+__pycache__/
+
+# model checkpoints
+*.ckpt
